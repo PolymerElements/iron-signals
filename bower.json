@@ -1,6 +1,6 @@
 {
   "name": "iron-signals",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Basic publish-subscribe functionality",
   "keywords": [
     "web-component",
@@ -18,13 +18,25 @@
   "license": "http://polymer.github.io/LICENSE.txt",
   "homepage": "https://github.com/PolymerElements/iron-signals/",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.0.0"
+    "polymer": "Polymer/polymer#2.0-preview"
   },
   "devDependencies": {
-    "paper-styles": "PolymerElements/paper-styles#^1.0.2",
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
-    "web-component-tester": "^4.0.0"
+    "paper-styles": "PolymerElements/paper-styles#2.0-preview",
+    "iron-component-page": "PolymerElements/iron-component-page#2.0-preview",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#v1",
+    "web-component-tester": "v6.0.0-prerelease.5"
   },
-  "ignore": []
+  "ignore": [],
+  "variants": {
+    "1.x": {
+      "dependencies": {
+        "polymer": "Polymer/polymer#^1.0.0"
+      },
+      "devDependencies": {
+        "paper-styles": "PolymerElements/paper-styles#^1.0.2",
+        "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+        "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+      }
+    }
+  }
 }
