@@ -17,7 +17,7 @@ thing! https://github.com/PolymerLabs/tedium/issues
 _[Demo and API docs](https://elements.polymer-project.org/elements/iron-signals)_
 
 
-##&lt;iron-signals&gt;
+## &lt;iron-signals&gt;
 
 `iron-signals` provides basic publish-subscribe functionality.
 
