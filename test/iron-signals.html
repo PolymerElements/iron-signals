@@ -28,26 +28,39 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <test-fixture id="trivialIronSignals">
         <template>
-            <iron-signals on-iron-signal-foo="fooSignal"></iron-signals>
+            <iron-signals></iron-signals>
         </template>
       </test-fixture>
 
-      <div id="thing"></div>
-
     <script>
         
-        suite("<iron-signals>", function() {
-            var component;
+        describe("<iron-signals>", function() {
+            var component, details;
 
-            setup(function() {
-                component = fixture("trivialIronSignals");
-                component.fooSignal = function(e, detail, sender) {
-                    
-                };
+            beforeEach(function() {
+               component = fixture("trivialIronSignals");
+
+               component.addEventListener("iron-signal-foo", function(e) {
+                    details = e.detail;
+                });
             });
 
-            test("something", function() {
-                component.fire('iron-signal', {name: "foo", data: "Foo!"});
+            afterEach(function() {
+                details = null;
+            });
+
+            it('component should receive signal that is meant for it', function() {
+                var detail = "bar";
+
+                component.fire("iron-signal", {name: "foo", data: detail});
+
+                expect(details).to.equal(detail);
+            });
+
+            it('component should not receive signal that is not meant for it', function() {
+                component.fire("iron-signal", {name: "bar", data: "foo"});
+
+                expect(details).to.equal(null);
             });
         });
         
